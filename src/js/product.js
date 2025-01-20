@@ -5,6 +5,12 @@ import { setLocalStorage, getParam } from "./utils.mjs";
 const productId = getParam("product");
 const dataSource = new ProductData("tents");
 
+function addProductToCart(product) {
+  //passing cart to ensure it's an array. It was saving product directly to local storage as a string
+  let cart = JSON.parse(localStorage.getItem("so-cart"));
+  if (!Array.isArray(cart)) {
+    cart = []; // creating empty cart
+
 const product = new ProductDetails(productId, dataSource);
 product.init();
 
@@ -13,6 +19,7 @@ class ProductDetails {
     this.productId = productId;
     this.product = {};
     this.dataSource = dataSource;
+
   }
 
   async init() {
