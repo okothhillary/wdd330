@@ -1,18 +1,7 @@
-import { setLocalStorage } from "./utils.mjs";
-import ProductData from "./productData.mjs";
+import { getParam } from "./utils.mjs";
+import productDetails from "./productDetails.mjs";
 
-const dataSource = new ProductData("tents");
+const productId = getParam("product");
+productDetails(productId);
 
-function addProductToCart(product) {
-  setLocalStorage("so-cart", product);
-}
-// add to cart button event handler
-async function addToCartHandler(e) {
-  const product = await dataSource.findProductById(e.target.dataset.id);
-  addProductToCart(product);
-}
-
-// add listener to Add to Cart button
-document
-  .getElementById("addToCart")
-  .addEventListener("click", addToCartHandler);
+//should be working now and reflecting on netlify

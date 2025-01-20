@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 https://trello.com/b/G8BRoVqg/wdd-330-block-sleep-outside
 
 Team Members:
 
 Hillary Okoth
+=======
+Hillary Okoth
+
+https://wdd330-sleepoutside.netlify.app/
+>>>>>>> aedc5d6ece7b82f272f6fe18b3a68fc7c86ced88
