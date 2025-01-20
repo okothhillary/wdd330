@@ -4,4 +4,4 @@ import productDetails from "./ProductDetails.mjs";
 const productId = getParam("product");
 productDetails(productId);
 
-//should be working now and reflecting on netlify
+//should be working and reflecting on netlify
