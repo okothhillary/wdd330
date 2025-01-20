@@ -4,7 +4,7 @@ import ProductData from "./ProductData.mjs";
 const dataSource = new ProductData("tents");
 
 function addProductToCart(product) {
-  //passing cart to ensure it's an array; fix for add to cart button not working.
+  //passing cart to ensure it's an array. It was saving product directly to local storage as a string
   let cart = JSON.parse(localStorage.getItem("so-cart"));
   if (!Array.isArray(cart)) {
     cart = []; // creating empty cart
