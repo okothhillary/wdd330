@@ -18,7 +18,7 @@ async function addToCartHandler() {
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("so-cart"));
   if (!Array.isArray(cart)) {
-    cart = []; // Creating empty cart if not valid
+    cart = []; // Creating empty cart if it is not valid    
   }
   cart.push(product);
   setLocalStorage("so-cart", cart);
