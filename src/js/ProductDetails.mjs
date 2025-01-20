@@ -10,7 +10,7 @@ export default async function productDetails(productId) {
   document.getElementById("addToCart").addEventListener("click", addToCartHandler);
 }
 
-//cart
+//still weeping
 async function addToCartHandler() {
   const product = await findProductById(document.getElementById("addToCart").dataset.id);
   addToCart(product);
