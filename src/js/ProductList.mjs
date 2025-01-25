@@ -25,8 +25,14 @@ export default class ProductList {
     this.renderList(list);
   }
 
-renderList(list) {
-   const htmlStrings = list.map(productCardTemplate);
-   this.listElement.insertAdjacentHTML("afterbegin", htmlStrings.join(""));
-   }
+//  // render after doing the first stretch
+//  renderList(list) {
+//     renderListWithTemplate(productCardTemplate, this.listElement, list);
+//   }
+
+  //render before doing the stretch
+  renderList(list) {
+    const htmlStrings = list.map(productCardTemplate);
+    this.listElement.insertAdjacentHTML("afterbegin", htmlStrings.join(""));
+  }
 }
