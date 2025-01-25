@@ -216,6 +216,30 @@ button {
   }
 }
 
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-controls button {
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: green;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background-color: black;
+}
+
+.quantity-controls button:active {
+  background-color: #dcdcdc;
+}
+
 footer {
   font-size: var(--small-font);
   padding: 1em;
