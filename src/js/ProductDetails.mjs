@@ -17,13 +17,24 @@ async function addToCartHandler() {
 }
 
 function addToCart(product) {
-  let cart = JSON.parse(localStorage.getItem("so-cart"));
+  let cart = JSON.parse(localStorage.getItem("so-cart")) || [];
   if (!Array.isArray(cart)) {
-    cart = []; // Creating empty cart if it is not valid    
+    cart = [];
   }
-  cart.push(product);
+
+  const existingProductIndex = cart.findIndex(item => item.Id === product.Id);
+  
+  if (existingProductIndex !== -1) {
+    const existingProduct = cart[existingProductIndex];
+    existingProduct.Quantity = (existingProduct.Quantity || 1) + 1;
+  } else {
+    const newProduct = { ...product, Quantity: 1 };
+    cart.push(newProduct);
+  }
+
   setLocalStorage("so-cart", cart);
 }
+
 
 function renderProductDetails() {
   document.querySelector("#productName").innerText = product.Brand.Name;

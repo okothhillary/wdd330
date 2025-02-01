@@ -1,7 +1,7 @@
-import ProductData from "./ProductData.mjs";
+import { getData, findProductById } from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
 
-const dataSource = new ProductData("tents");
+const dataSource = { getData, findProductById };
 const element = document.querySelector(".product-list");
 const listing = new ProductList("Tents", dataSource, element);
 
